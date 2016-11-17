@@ -1,0 +1,141 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Gradster</title>
+  <meta name="description" content="Gradster">
+  <meta name="author" content="Forrest Slater">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <section class="splash">
+    <img class="icon-logo" alt="gradster logo" src="images/Gradster_logo.svg"/>
+  </section>
+  <section class="community">
+    <div class="tab-down">
+      <div class="arrow-down"></div>
+    </div>
+    <div class="wrapper">
+      <h1>gradster</h1>
+      <img src="images/students.jpg" class="icon-students" alt="students"/>
+      <h2>FOR STUDENTS</h2>
+      <p>We make it easy to run your own business and raise money for your school cause</p>
+      <div class="btn join">Join our community</div>
+      <p></p>
+    </div>
+  </section>
+  <section class="flow">
+    <div class="wrapper">
+      <div>
+        <img alt="design icon" src="images/GS_DESIGN-ICON.svg"/>
+        <div>1. Design</div>
+        <p>Customize and personalize your online store</p>
+      </div>
+      <div>
+        <img alt="learn icon" src="images/GS_LEARN-ICON.svg"/>
+        <div>2. Learn</div>
+        <p>Our curriculum teaches business thinking and our gurus guide you through the process</p>
+      </div>
+      <div>
+        <img style="width: 111px; margin-left: 20px;" alt="launch icon" src="images/GS_LAUNCH-ICON.svg"/>
+        <div>3. Launch</div>
+        <p>Promote your campaign using our innovative online tools</p>
+      </div>
+      <div>
+        <img alt="support icon" src="images/GS_SUPPORT-ICON.svg"/>
+        <div>4. Support</div>
+        <p>Collect funds and support your school causes</p>
+      </div>
+    </div>
+  </section>
+  <section class="campaigns">
+    <h1>Gradster Campaigns</h1>
+    <div>
+      <img alt="flower" src="images/flower.svg"/>
+      <img alt="leis" src="images/crown.svg"/>
+      <div>
+        <h4>Spring 2017</h4>
+        <h5>Graduation Flowers and Leis</h5>
+        <p>Crafted flowers, right of passage leis, and school spirit necklaces</p>
+        <div class="btn">Sign up</div>
+      </div>
+    </div>
+    <div>
+      <img alt="sunglasses" src="images/GS_SunGlasses.svg"/>
+      <img alt="backpack" src="images/backpack.svg"/>
+      <div>
+        <h4>Fall 2018</h4>
+        <h5>Back to School</h5>
+        <p>Hip, cool, and environmentally conscious products</p>
+        <div class="btn">Sign up</div>
+      </div>
+    </div>
+    <div>
+      <img class="arrow-right" src="images/arrow-right.jpg">
+      <img alt="light bulb" src="images/light-bulb.svg"/>
+      <img alt="monitor" src="images/GS_CAMPAIGNIDEA-ICON.svg"/>
+      <div>
+        <h4>Spring 2018</h4>
+        <h5>Graduation Flowers and Leis</h5>
+        <p>Crafted flowers, right of passage leis, and school spirit necklaces.</p>
+        <div class="btn">Sign up</div>
+      </div>
+    </div>
+  </section>
+  <section class="join">
+    <img class="icon-logo" alt="gradster logo" src="images/Gradster_logo.svg"/>
+    <div>
+      <h5>Join our Community</h5>
+      <form>
+        <div>
+          <input placeholder="First Name"/>
+          <input placeholder="Last Name"/>
+        </div>
+        <div>
+          <input placeholder="Email"/>
+          <input placeholder="Phone"/>
+          <input placeholder="School"/>
+        </div>
+        <div class="btn submit">Submit</div>
+      </form>
+    </div>
+  </section>
+  <section class="completion">
+    <p>We welcome you as a new <span>gradster</span> and we'll be in touch in early 2017!</p>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      var scrollTime = 500,
+          scrollSelector = 'html, body';
+
+      function scrollToForm() {
+        var height = $(window).height();
+
+        $('section.join').css('height',height);
+        
+        
+        $(scrollSelector).animate({
+            scrollTop: $('section.join').offset().top
+        }, scrollTime);
+      }
+
+      function scrollToCompletion () {
+        $('section.completion').css('display', 'block');
+        $(scrollSelector).animate({
+            scrollTop: $('section.completion').offset().top
+        }, scrollTime);
+      }
+
+      $('.btn:not(submit)').click(scrollToForm);  //":not" isn't supported by IE8
+      $('.tab-down').click(scrollToForm);
+      $('.btn.submit').click(scrollToCompletion);
+    });
+  </script>
+</body>
+</html>
