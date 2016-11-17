@@ -135,9 +135,8 @@ section.join {
   height: 665px;
 }
 section.join .icon-logo {
-  margin: -84px -214px;
-  width: 460px;
-  height: 343px;
+  margin: 0 -100px;
+  width: 200px;
 }
 section.join > div {
   background: white;
@@ -152,11 +151,11 @@ section.join h5 {
 section.completion {
   display: none;
   background-color: #F1F2F4;
-  background-image: url(../images/Gradster_logo.svg);
+  background-image: url(../images/white-GRADSTER-top.svg);
   height: 820px;
   background-repeat: no-repeat;
-  background-size: 7000px;
-  background-position: -3300px -1100px;
+  background-size: 2000px;
+  background-position: -1070px -284px;
 }
 section.completion p {
   width: 267px;
@@ -197,12 +196,12 @@ form > div:nth-of-type(2) input {
   width: 204px;
 }
 .icon-logo {
-  width: 1050px;
+  width: 200px;
   display: block;
   clear: both;
   left: 50%;
   position: relative;
-  margin: -25px 0 0 -484px;
+  margin: 110px -100px;
 }
 .icon-students {
   width: 82px;
