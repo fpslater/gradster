@@ -1,6 +1,7 @@
 /** 
     orange #F04F41 
     grey #F1F2F4
+    darkGrey #999999
 **/
 
 @font-face {
@@ -14,14 +15,19 @@ body {
 section { 
   height: 466px;
   overflow: hidden;
+  min-height: 715px;
+  position: relative;
 }
 h1 {
-  font-size: 31px;
+  font-size: 55px;
   color: #F04F41;
+}
+h2 {
+  font-size: 22px;
 }
 p {
   display: inline-block;
-  width: 347px;
+  width: 488px;
   font-size: 20px;
   word-spacing: 3px;
 }
@@ -29,59 +35,85 @@ input {
   border-radius: 3px;
   border: 1px solid lightgrey;
   padding: 10px;
-  font-size: 15px;
+  font-size: 20px;
+}
+section {
+  position: relative;
+  text-align: center;
+}
+section > * {
+  position: absolute;
 }
 section.splash {
-  background: #F04F41
+  background: #F04F41;
+}
+section.splash > div {
+  height: 43px;
+  width: 100%;
+  background: white;
+  position: absolute;
+  bottom: 0px;
 }
 section.community {
   text-align: center;
   height: 567px;
-}
-
-section.community {
   font-size: 17px;
 }
-
-section.community .wrapper {
-  margin-top: 44px;
+section.community .container {
+  top: 14%;
+  left: 50%;
+  margin-left: -76.5px;
+}
+section.community h1 {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 2%;
 }
 section.community .wrapper > * {
-  margin: 16px auto 13px;
+  margin: 1% auto 1%;
 }
-section.community p:first-of-type {
-  margin: 55px auto 67px;
+section.community > p:first-of-type {
   display: block;
   line-height: 31px;
-  font-size: x-large;
+  font-size: 25px;
+  text-align: center;
+  width: 550px;
+  top: 35%;
+  left: 50%;
+  margin-left: -275px;
 }
-section.flow {
+section.community .wrapper {
   background: #F04F41;
-  height: 310px;
+  height: 270px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
-section.flow img {
-  width: 88px;
+section.community .wrapper img {
+  width: 109px;
+  margin-top: 21px;
 }
-section.flow p {
+section.community .wrapper div > p {
   color: white;
-  font-size: 12px;
-  width: 151px;
-  margin-top: 15px;
-  line-height: 13px;
+  font-size: 16px;
+  width: 175px;
+  margin-top: 7px;
+  line-height: 16px;
 }
-section.flow .wrapper {
-  width: 720px;
-  margin: 55px auto;
+section.community .wrapper > div {
+  width: 744px;
+  margin: 0 auto;
 }
-section.flow .wrapper > div {
+section.community .wrapper div > div {
   float: left;
-  width: 174px;
+  width: 185px;
   text-align: center;
   font-size: 20px;
 }
-section.flow .wrapper > div > div {
-  margin-top: 20px;
-  font-size: 25px;
+section.community .wrapper div > div > div {
+  margin-top: 14px;
+  font-size: 30px;
 }
 section.campaigns {
   height: 721px;
@@ -89,63 +121,85 @@ section.campaigns {
 section.campaigns h1 {
   color: black;
   text-align: center;
-  margin-top: 49px;
+  margin-top: 3%;
+  width: 100%;
+  position: relative;
 }
 section.campaigns img {
-  width: 114px;
+  width: 128px;
   margin-right: 35px;
   float: left;
 }
 section.campaigns > div {
-  width: 534px;
-  margin: 62px auto;
+  width: 664px;
   clear: both;
   overflow: hidden;
+  position: absolute;
+  left: 50%;
+  margin-left: -332px;
+}
+section.campaigns > div:first-of-type {
+  top: 19%;
+}
+section.campaigns > div:nth-of-type(2) {
+  top: 45.5%;
+}
+section.campaigns > div:nth-of-type(3) {
+  top: 72%;
 }
 section.campaigns > div > div {
   float: left;
 }
 section.campaigns h4 {
-  font-size: 10px;
+  font-size: 18px;
   font-weight: bold;
   text-transform: uppercase;
+  width: 330px;
 }
 section.campaigns p {
-  font-size: 10px;
+  font-size: 15px;
   margin-top: 5px;
-  width: 213px;
-  line-height: 13px;
+  width: 239px;
+  line-height: 15px;
 }
 section.campaigns h5 {
-  font-size: 18px;
+  font-size: 25px;
   margin-top: 5px;
+  width: 330px;
 }
 section.campaigns img.arrow-right {
   position: absolute;
+  left: 0;
   width: 36px;
-  margin: 38px 112px;
+  margin: 38px 122px;
 }
 section.campaigns .btn {
   margin-top: 12px;
-  width: 56px;
-  font-size: 15px;
+  width: 100px;
+  font-size: 26px;
+  margin-left: 88px;
 }
 section.join {
   background: #F04F41;
   height: 665px;
 }
 section.join .icon-logo {
-  margin: 0 -100px;
+  margin: 0% -100px;
   width: 200px;
+  left: 50%;
+  position: absolute;
+  top: 3%;
 }
 section.join > div {
   background: white;
   padding: 30px;
-  margin: 0px auto;
-  width: 393px;
-  height: 342px;
+  margin: 0px -289px;
+  width: 518px;
+  left: 50%;
+  top: 27%;
 }
 section.join h5 {
+  font-size: 25px;
   text-align: center;
 }
 section.completion {
@@ -158,19 +212,29 @@ section.completion {
   background-position: -1070px -284px;
 }
 section.completion p {
-  width: 267px;
   text-align: center;
-  margin: 111px auto;
-  line-height: 31px;
+  margin: 23% -275px;
+  line-height: 43px;
   display: block;
-  font-size: 21px;
+  font-size: 32px;
+  width: 550px;
+  left: 50%;
 }
 section.completion span {
   color: #F04F41;
+  font-weight: bold;
 }
 form input {
   display: block;
   margin-bottom: 15px;
+}
+input, select, textarea{
+  font-family: "Futura", sans-serif;
+  color: #999999;
+}
+form > div {
+  color: #999999;
+  font-size: 15px;
 }
 form > div:first-of-type {
   margin-top: 20px;
@@ -180,31 +244,50 @@ form > div:first-of-type input {
 }
 form > div input:first-of-type {
   margin-right: 10px;
+  float: left;
 }
 form > div:nth-of-type(2) input {
-  width: 370px;
+  width: 495px;
+}
+form > div > div {
+  clear: both;
+  line-height: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+form .btn {
+  margin: 20px 0 0 0;
 }
 .btn {
   background: #F04F41;
   padding: 11px 30px;
   color: white;
-  font-size: 20px;
+  font-size: 26px;
   text-align: center;
   cursor: pointer;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px #888888;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
 }
 .btn.join {
-  width: 204px;
+  line-height: 40px;
+  top: 48%;
+  display: inline-block;
+  position: relative;
 }
 .icon-logo {
-  width: 200px;
+  width: 300px;
   display: block;
   clear: both;
+  top: 50%;
   left: 50%;
   position: relative;
-  margin: 110px -100px;
+  margin: -188px -150px;
 }
 .icon-students {
-  width: 82px;
+  width: 125px;
 }
 
 .tab-down {
@@ -212,9 +295,11 @@ form > div:nth-of-type(2) input {
   background: #F04F41;
   height: 90px;
   width: 90px;
-  margin: -52px auto 0;
   overflow: hidden;
   cursor: pointer;
+  position: absolute;
+  margin: -50px 0 0 -45px;
+  left: 50%;
 }
 .arrow-down {
   width: 0;
@@ -224,3 +309,4 @@ form > div:nth-of-type(2) input {
   border-top: 29px solid white;
   margin: 50px 0 0 28px
 }
+

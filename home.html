@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=.45">
 
   <title>Gradster</title>
   <meta name="description" content="Gradster">
@@ -15,41 +16,42 @@
 <body>
   <section class="splash">
     <img class="icon-logo" alt="gradster logo" src="images/white-GRADSTER-top.svg"/>
+    <div>
+      <div class="tab-down">
+        <div class="arrow-down"></div>
+      </div>
+    </div>
   </section>
   <section class="community">
-    <div class="tab-down">
-      <div class="arrow-down"></div>
-    </div>
-    <div class="wrapper">
-      <h1>gradster</h1>
+    <h1>gradster</h1>
+    <div class="container">
       <img src="images/students.jpg" class="icon-students" alt="students"/>
       <h2>FOR STUDENTS</h2>
-      <p>We make it easy to run your own business and raise money for your school cause</p>
-      <div class="btn join">Join our community</div>
-      <p></p>
     </div>
-  </section>
-  <section class="flow">
+    <p>We make it easy to run your own business and raise money for your school cause</p>
+    <div class="btn join">Join our community</div>
     <div class="wrapper">
       <div>
-        <img alt="design icon" src="images/GS_DESIGN-ICON.svg"/>
-        <div>1. Design</div>
-        <p>Customize and personalize your online store</p>
-      </div>
-      <div>
-        <img alt="learn icon" src="images/GS_LEARN-ICON.svg"/>
-        <div>2. Learn</div>
-        <p>Our curriculum teaches business thinking and our gurus guide you through the process</p>
-      </div>
-      <div>
-        <img style="width: 111px; margin-left: 20px;" alt="launch icon" src="images/GS_LAUNCH-ICON.svg"/>
-        <div>3. Launch</div>
-        <p>Promote your campaign using our innovative online tools</p>
-      </div>
-      <div>
-        <img alt="support icon" src="images/GS_SUPPORT-ICON.svg"/>
-        <div>4. Support</div>
-        <p>Collect funds and support your school causes</p>
+        <div>
+          <img alt="design icon" src="images/GS_DESIGN-ICON.svg"/>
+          <div>1. Design</div>
+          <p>Customize and personalize your online store</p>
+        </div>
+        <div>
+          <img alt="learn icon" src="images/GS_LEARN-ICON.svg"/>
+          <div>2. Learn</div>
+          <p>Our curriculum teaches business thinking and our gurus guide you through the process</p>
+        </div>
+        <div>
+          <img style="width: 141px; margin-left: 34px;" alt="launch icon" src="images/GS_LAUNCH-ICON.svg"/>
+          <div>3. Launch</div>
+          <p>Promote your campaign using our innovative online tools</p>
+        </div>
+        <div>
+          <img alt="support icon" src="images/GS_SUPPORT-ICON.svg"/>
+          <div>4. Support</div>
+          <p>Collect funds and support your school causes</p>
+        </div>
       </div>
     </div>
   </section>
@@ -66,10 +68,10 @@
       </div>
     </div>
     <div>
-      <img alt="sunglasses" src="images/GS_SunGlasses.svg"/>
+      <img alt="sunglasses" class="sunglasses" src="images/GS_SunGlasses.svg"/>
       <img alt="backpack" src="images/backpack.svg"/>
       <div>
-        <h4>Fall 2018</h4>
+        <h4>Fall 2017</h4>
         <h5>Back to School</h5>
         <p>Hip, cool, and environmentally conscious products</p>
         <div class="btn">Sign up</div>
@@ -81,8 +83,8 @@
       <img alt="monitor" src="images/GS_CAMPAIGNIDEA-ICON.svg"/>
       <div>
         <h4>Spring 2018</h4>
-        <h5>Graduation Flowers and Leis</h5>
-        <p>Crafted flowers, right of passage leis, and school spirit necklaces.</p>
+        <h5>Submit Your Campaign Idea</h5>
+        <p>Gradster will help turn your idea into reality</p>
         <div class="btn">Sign up</div>
       </div>
     </div>
@@ -93,36 +95,66 @@
       <h5>Join our Community</h5>
       <form>
         <div>
-          <input placeholder="First Name"/>
-          <input placeholder="Last Name"/>
+          <input id="first" placeholder="First Name"/>
+          <input id="last" placeholder="Last Name"/>
         </div>
         <div>
-          <input placeholder="Email"/>
-          <input placeholder="Phone"/>
-          <input placeholder="School"/>
+          <input id="email" placeholder="Email"/>
+          <input id="phone" placeholder="Phone"/>
+          <input id="school" placeholder="School"/>
+        </div>
+        <div>
+          <div>
+            <input id="role" type="radio" name="role" value="student" checked="checked"> I am a student
+          </div>
+          <div>
+            <input type="radio" name="role" value="advisor"> I am a student advisor
+          </div>
         </div>
         <div class="btn submit">Submit</div>
       </form>
     </div>
   </section>
   <section class="completion">
-    <p>We welcome you as a new <span>gradster</span> and we'll be in touch in early 2017!</p>
+    <p>We welcome you as a new <span>gradster</span> We'll be in touch in early 2017!</p>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+     (function(){
+        emailjs.init("user_TFLdKvDzW9JQHY34KC2ry");
+     })();
+  </script>
   <script type="text/javascript">
     $( document ).ready(function() {
       var scrollTime = 500,
           scrollSelector = 'html, body';
 
       function scrollToForm() {
-        var height = $(window).height();
-
-        $('section.join').css('height',height);
-        
-        
         $(scrollSelector).animate({
             scrollTop: $('section.join').offset().top
         }, scrollTime);
+      }
+
+      function submitForm() {
+        var first = $('#first').val(),
+            last = $('#last').val(),
+            email = $('#email').val(),
+            phone = $('#phone').val(),
+            school = $('#school').val(),
+            role = $('input[name=role]:checked', 'form').val(),
+            json = "{first: "+first+", last: "+last+", email: "+email+", phone: "+phone+", school: "+school+", role: "+role+"}";
+        
+        emailjs.send("gradster_rocks_1982","template_ljkvXWfR",{first: first, last: last, email: email, phone:  phone, school: school, role: role, json: json});
+        scrollToCompletion();
+        clearForm();
+      }
+
+      function clearForm() {
+        setTimeout(function(){
+          $('input').val('');
+        }, 1000)
+        
       }
 
       function scrollToCompletion () {
@@ -132,9 +164,26 @@
         }, scrollTime);
       }
 
+      function scrollToCommunity() {
+        $(scrollSelector).animate({
+            scrollTop: $('section.community').offset().top
+        }, scrollTime);
+      }
+
+      function resize () {
+        var height = $(window).height();
+        $('section').css('height',height);
+      }
+
+      function init () {
+        resize();
+      }
+
       $('.btn:not(submit)').click(scrollToForm);  //":not" isn't supported by IE8
-      $('.tab-down').click(scrollToForm);
-      $('.btn.submit').click(scrollToCompletion);
+      $('.tab-down').click(scrollToCommunity);
+      $('.btn.submit').click(submitForm);
+
+      init();
     });
   </script>
 </body>
