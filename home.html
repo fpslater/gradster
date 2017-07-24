@@ -3,19 +3,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=.45">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Gradster</title>
-  <meta name="description" content="Gradster">
-  <meta name="author" content="Forrest Slater">
+<title>Gradster</title>
+<meta name="description" content="Gradster">
+<meta name="author" content="Forrest Slater">
 
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/home.js"></script>
+
+<!-- <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+<link rel="stylesheet" href="/stylesheets/reset.css">
+<link rel="stylesheet" href="/stylesheets/index.css">
+<link rel="stylesheet" href="/stylesheets/responsive.css">
+
 </head>
 
 <body>
   <section class="splash">
-    <img class="icon-logo" alt="gradster logo" src="images/white-GRADSTER-top.svg"/>
+    <img class="icon-logo" alt="gradster logo" src="/white-GRADSTER-top.svg"/>
     <div>
       <div class="tab-down">
         <div class="arrow-down"></div>
@@ -25,7 +32,7 @@
   <section class="community">
     <h1>gradster</h1>
     <div class="container">
-      <img src="images/students.jpg" class="icon-students" alt="students"/>
+      <img src="/students.jpg" class="icon-students" alt="students"/>
       <h2>FOR STUDENTS</h2>
     </div>
     <p>We make it easy to run your own business and raise money for your school cause</p>
@@ -33,22 +40,22 @@
     <div class="wrapper">
       <div>
         <div>
-          <img alt="design icon" src="images/GS_DESIGN-ICON.svg"/>
+          <img alt="design icon" src="/GS_DESIGN-ICON.svg"/>
           <div>1. Design</div>
           <p>Customize and personalize your online store</p>
         </div>
         <div>
-          <img alt="learn icon" src="images/GS_LEARN-ICON.svg"/>
+          <img alt="learn icon" src="/GS_LEARN-ICON.svg"/>
           <div>2. Learn</div>
           <p>Our curriculum teaches business thinking and our gurus guide you through the process</p>
         </div>
-        <div>
-          <img style="width: 141px; margin-left: 34px;" alt="launch icon" src="images/GS_LAUNCH-ICON.svg"/>
+        <div id="gimpy-img-container">
+          <img style="width: 141px; margin-left: 34px;" alt="launch icon" src="/GS_LAUNCH-ICON.svg"/>
           <div>3. Launch</div>
           <p>Promote your campaign using our innovative online tools</p>
         </div>
         <div>
-          <img alt="support icon" src="images/GS_SUPPORT-ICON.svg"/>
+          <img alt="support icon" src="/GS_SUPPORT-ICON.svg"/>
           <div>4. Support</div>
           <p>Collect funds and support your school causes</p>
         </div>
@@ -57,9 +64,10 @@
   </section>
   <section class="campaigns">
     <h1>Gradster Campaigns</h1>
+    <span id="campaigns-mask"></span>
     <div>
-      <img alt="flower" src="images/flower.svg"/>
-      <img alt="leis" src="images/crown.svg"/>
+      <img alt="flower" src="/flower.svg"/>
+      <img alt="leis" src="/crown.svg"/>
       <div>
         <h4>Spring 2017</h4>
         <h5>Graduation Flowers and Leis</h5>
@@ -68,9 +76,8 @@
       </div>
     </div>
     <div>
-      <img alt="sunglasses" class="sunglasses" src="images/GS_SunGlasses.svg"/>
-      <img alt="backpack" src="images/backpack.svg"/>
-      <div>
+      <img class="backpack" alt="backpack" src="/backpack.svg"/>
+      <div class="backpack">
         <h4>Fall 2017</h4>
         <h5>Back to School</h5>
         <p>Hip, cool, and environmentally conscious products</p>
@@ -78,9 +85,9 @@
       </div>
     </div>
     <div>
-      <img class="arrow-right" src="images/arrow-right.jpg">
-      <img alt="light bulb" src="images/light-bulb.svg"/>
-      <img alt="monitor" src="images/GS_CAMPAIGNIDEA-ICON.svg"/>
+      <img class="arrow-right" src="/arrow-right.jpg">
+      <img alt="light bulb" src="/light-bulb.svg"/>
+      <img alt="monitor" src="/GS_CAMPAIGNIDEA-ICON.svg"/>
       <div>
         <h4>Spring 2018</h4>
         <h5>Submit Your Campaign Idea</h5>
@@ -90,7 +97,7 @@
     </div>
   </section>
   <section class="join">
-    <img class="icon-logo" alt="gradster logo" src="images/white-GRADSTER-top.svg"/>
+    <img class="icon-logo" alt="gradster logo" src="/white-GRADSTER-top.svg"/>
     <div>
       <h5>Join our Community</h5>
       <form>
@@ -118,73 +125,11 @@
   <section class="completion">
     <p>We welcome you as a new <span>gradster</span> We'll be in touch in early 2017!</p>
   </section>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
      (function(){
         emailjs.init("user_TFLdKvDzW9JQHY34KC2ry");
      })();
-  </script>
-  <script type="text/javascript">
-    $( document ).ready(function() {
-      var scrollTime = 500,
-          scrollSelector = 'html, body';
-
-      function scrollToForm() {
-        $(scrollSelector).animate({
-            scrollTop: $('section.join').offset().top
-        }, scrollTime);
-      }
-
-      function submitForm() {
-        var first = $('#first').val(),
-            last = $('#last').val(),
-            email = $('#email').val(),
-            phone = $('#phone').val(),
-            school = $('#school').val(),
-            role = $('input[name=role]:checked', 'form').val(),
-            json = "{first: "+first+", last: "+last+", email: "+email+", phone: "+phone+", school: "+school+", role: "+role+"}";
-        
-        emailjs.send("gradster_rocks_1982","template_ljkvXWfR",{first: first, last: last, email: email, phone:  phone, school: school, role: role, json: json});
-        scrollToCompletion();
-        clearForm();
-      }
-
-      function clearForm() {
-        setTimeout(function(){
-          $('input').val('');
-        }, 1000)
-        
-      }
-
-      function scrollToCompletion () {
-        $('section.completion').css('display', 'block');
-        $(scrollSelector).animate({
-            scrollTop: $('section.completion').offset().top
-        }, scrollTime);
-      }
-
-      function scrollToCommunity() {
-        $(scrollSelector).animate({
-            scrollTop: $('section.community').offset().top
-        }, scrollTime);
-      }
-
-      function resize () {
-        var height = $(window).height();
-        $('section').css('height',height);
-      }
-
-      function init () {
-        resize();
-      }
-
-      $('.btn:not(submit)').click(scrollToForm);  //":not" isn't supported by IE8
-      $('.tab-down').click(scrollToCommunity);
-      $('.btn.submit').click(submitForm);
-
-      init();
-    });
-  </script>
+  </script> -->
 </body>
 </html>

@@ -62,7 +62,7 @@ section.community {
 section.community .container {
   top: 14%;
   left: 50%;
-  margin-left: -76.5px;
+  margin-left: -80.5px;
 }
 section.community h1 {
   position: absolute;
@@ -129,6 +129,7 @@ section.campaigns img {
   width: 128px;
   margin-right: 35px;
   float: left;
+  margin-top: 20px;
 }
 section.campaigns > div {
   width: 664px;
@@ -171,12 +172,12 @@ section.campaigns img.arrow-right {
   position: absolute;
   left: 0;
   width: 36px;
-  margin: 38px 122px;
+  margin: 61px 122px;
 }
 section.campaigns .btn {
   margin-top: 12px;
-  width: 100px;
-  font-size: 26px;
+  width: 92px;
+  font-size: 22px;
   margin-left: 88px;
 }
 section.join {
@@ -205,7 +206,7 @@ section.join h5 {
 section.completion {
   display: none;
   background-color: #F1F2F4;
-  background-image: url(../images/white-GRADSTER-top.svg);
+  background-image: url(../white-GRADSTER-top.svg);
   height: 820px;
   background-repeat: no-repeat;
   background-size: 2000px;
@@ -309,4 +310,17 @@ form .btn {
   border-top: 29px solid white;
   margin: 50px 0 0 28px
 }
-
+#campaigns-mask {
+  position: absolute;
+  width: 100%;
+  height: 372px;
+  background: lightgray;
+  margin-top: 379px;
+  display: none;
+}
+img.backpack {
+  margin: 20px 99px;
+}
+div.backpack {
+  margin-left: 64px;
+}

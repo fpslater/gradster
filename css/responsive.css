@@ -1,0 +1,148 @@
+@media only screen and (max-width: 750px) {
+  section {
+    min-height: 500px;
+  }
+  section.community {
+    height: 1092px;
+  }
+  section.community > p:first-of-type {
+    margin-left: 0px;
+    left: 0%;
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+    padding: 5%;
+    top: 237px;
+  }
+  section.community .wrapper > div {
+    width: 100%;
+  }
+  section.community .wrapper > div > div {
+    clear: both;
+    float: none;
+    width: 350px;
+    margin: 28px auto;
+    height: 108px;
+  }
+  section.community .wrapper img {
+    float: left;
+  }
+  section.community .wrapper div > div > div {
+    float: left;
+    width: 230px;
+    clear: none;
+    margin-top: 20px;
+  }
+  section.community .wrapper div > p {
+    width: 230px;
+    line-height: 18px;
+  }
+  section.community .wrapper {
+    height: 601px;
+  }
+  #gimpy-img-container img {
+    margin-left: 0px !important;
+  }
+  #gimpy-img-container div {
+    position: absolute;
+    margin-left: 117px;
+  }
+  #gimpy-img-container p {
+    position: absolute;
+    margin: 57px -118px;
+  }
+  section.community h1 {
+    top: 20px;
+  }
+  section.community .container {
+    top: 110px;
+  }
+  section.community .btn.join {
+    top: 380px;
+  }
+  section.campaigns h1 {
+    font-size: 35px;
+    line-height: 72px;
+    margin-top: 0px;
+    background-color: lightgray;
+  }
+  section.campaigns > div > div {
+    clear: both;
+  }
+  section.campaigns > div {
+    top: 50px !important;
+    width: 350px;
+    left: 0%;
+    margin: 0 auto 20px;
+    position: relative;
+    padding-top: 10px;
+  }
+  section.campaigns img {
+    margin: 20px 22px 10px;
+  }
+  section.campaigns {
+    height: 1200px;
+  }
+  section.campaigns img.arrow-right {
+    margin: 60px 149px;
+  }
+  #campaigns-mask {
+    display: block;
+  }
+  section.join {
+    height: 800px;
+  }
+  section.join > div {
+    width: 100%;
+    margin: 0;
+    left: 0;
+    padding: 30px 0;
+  }
+  form input {
+    width: 85% !important;
+    float: none !important;
+    margin: 15px auto !important;
+    display: block !important;
+  }
+  form > div > div input {
+    float: left !important;
+    margin: 4px 24px 15px !important;
+    display: inline-block !important;
+    width: 20px !important;
+  }
+  form .btn {
+    width: 73% !important;
+    margin: 22px auto;
+  }
+  section.completion p {
+    width: 90%;
+    left: 0%;
+    margin: 33% auto;
+    display: block;
+    position: relative;
+  }
+  div.backpack {
+    margin-left: 0px;
+  }
+  img.backpack {
+    margin-left: 107px !important;
+  }
+  section.campaigns h4 {
+    margin-top: -190px;
+  }
+  section.campaigns h5 {
+    margin-top: 165px;
+  }
+  section.campaigns > div:nth-of-type(2) {
+    margin-top: 60px;
+  }
+  section.campaigns > div:nth-of-type(3) {
+    margin-top: 56px;
+  }
+  section.campaigns > div:nth-of-type(3) h4 {
+    margin-top: -169px;
+  }
+  section.campaigns > div:first-of-type {
+    margin-top: -25px;
+  }
+}
